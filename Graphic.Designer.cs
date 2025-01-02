@@ -35,7 +35,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(616, 432);
+            this.ClientSize = new System.Drawing.Size(1163, 432);
             this.Name = "Graphic";
             this.Text = "Graphic";
             this.ResumeLayout(false);
