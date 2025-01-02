@@ -3,7 +3,6 @@ using System.Linq;
 using Newtonsoft.Json;
 using System.IO;
 using System.Collections.Generic;
-using System.Xml.Linq;
 
 
 namespace personal_note
@@ -170,8 +169,6 @@ namespace personal_note
 
         public static void LoadDiary(string fileName)
         {
-            // Load diary from the file
-            // string fileName = $"{diaryNode.year}-{diaryNode.month}-{diaryNode.day}-{diaryNode.index}.json";
             if (File.Exists(fileName))
             {
                 using (StreamReader sr = File.OpenText(fileName))
@@ -179,10 +176,6 @@ namespace personal_note
                     string temp = sr.ReadToEnd();
                     try
                     {
-                        //new JsonSerializerSettings()
-                        //{
-                        //    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                        //}
                         DiaryNode diaryNode = JsonConvert.DeserializeObject<DiaryNode>(temp);
                         if (diaryNode != null)
                         {
@@ -191,7 +184,6 @@ namespace personal_note
                     }
                     catch (JsonSerializationException ex)
                     {
-                        // Handle the exception, possibly log it or inform the user
                         Console.WriteLine($"Error deserializing file {fileName}: {ex.Message}");
                     }
                 }
