@@ -27,6 +27,7 @@ namespace personal_note
             rtbDate.Text = $"{year}年 {month}月 {day}日";
             Random random = new Random();
             rtbNote.Text = quesion[random.Next(0, quesion.Count)];
+            initialColor();
         }
 
         public Note(DiaryNode diaryNode)
@@ -45,8 +46,32 @@ namespace personal_note
                 lblTagText.Text += "#"+str + " ";
             }
             rtbDate.Text = $"{diaryNode.year}年 {diaryNode.month}月 {diaryNode.day}日";
+
+            initialColor();
         }
 
+        private void initialColor()
+        {
+            this.BackColor = Form1.mainForm.colorBackGround;
+            this.ForeColor = Form1.mainForm.colorText;
+            for(int i = 0;i < 5;i++)
+            {
+                pictureBoxes[i].BackColor = Form1.mainForm.colorBackGround;
+            }
+
+            rtbNote.BackColor = Form1.mainForm.colorBackGround;
+            rtbNote.ForeColor= Form1.mainForm.colorText;
+            rtbTitle.BackColor = Form1.mainForm.colorBackGround;
+            rtbTitle.ForeColor= Form1.mainForm.colorText;
+            lblTag.BackColor = Form1.mainForm.colorBackGround;
+            lblTag.ForeColor = Form1.mainForm.colorText;
+            lblDate.BackColor = Form1.mainForm.colorBackGround;
+            lblDate.ForeColor = Form1.mainForm.colorText;
+            rtbDate.BackColor = Form1.mainForm.colorBackGround;
+            rtbDate.ForeColor = Form1.mainForm.colorText;
+            rtbAdd.BackColor = Form1.mainForm.colorLabel;
+            rtbAdd.ForeColor = Form1.mainForm.colorText;
+        }
         private void InitialPBox()
         {
             pictureBoxes.Add(pBox1);
