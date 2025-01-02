@@ -150,7 +150,7 @@
             this.pBox1.Location = new System.Drawing.Point(531, 6);
             this.pBox1.Name = "pBox1";
             this.pBox1.Size = new System.Drawing.Size(61, 57);
-            this.pBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pBox1.TabIndex = 11;
             this.pBox1.TabStop = false;
             this.pBox1.Click += new System.EventHandler(this.pBox_Click);
@@ -161,7 +161,7 @@
             this.pBox2.Location = new System.Drawing.Point(589, 6);
             this.pBox2.Name = "pBox2";
             this.pBox2.Size = new System.Drawing.Size(61, 57);
-            this.pBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pBox2.TabIndex = 12;
             this.pBox2.TabStop = false;
             this.pBox2.Click += new System.EventHandler(this.pBox_Click);
@@ -172,7 +172,7 @@
             this.pBox3.Location = new System.Drawing.Point(647, 6);
             this.pBox3.Name = "pBox3";
             this.pBox3.Size = new System.Drawing.Size(61, 57);
-            this.pBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pBox3.TabIndex = 13;
             this.pBox3.TabStop = false;
             this.pBox3.Click += new System.EventHandler(this.pBox_Click);
@@ -183,7 +183,7 @@
             this.pBox4.Location = new System.Drawing.Point(705, 6);
             this.pBox4.Name = "pBox4";
             this.pBox4.Size = new System.Drawing.Size(61, 57);
-            this.pBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pBox4.TabIndex = 14;
             this.pBox4.TabStop = false;
             this.pBox4.Click += new System.EventHandler(this.pBox_Click);
@@ -194,7 +194,7 @@
             this.pBox5.Location = new System.Drawing.Point(762, 6);
             this.pBox5.Name = "pBox5";
             this.pBox5.Size = new System.Drawing.Size(61, 57);
-            this.pBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pBox5.TabIndex = 15;
             this.pBox5.TabStop = false;
             this.pBox5.Click += new System.EventHandler(this.pBox_Click);

@@ -90,12 +90,12 @@ namespace personal_note
 
             if (isTitleEmpty) rtbTitle.Text = "";
             isTitleEmpty = false;
-            rtbTitle.ForeColor = Color.White;
+            rtbTitle.ForeColor = Form1.mainForm.colorText;
             if (e.KeyCode == Keys.Back && rtbTitle.Text.Length <= 1)
             {
                 isTitleEmpty = true;
                 rtbTitle.Text = "Title";
-                rtbTitle.ForeColor = Color.Gray;
+                rtbTitle.ForeColor = Form1.mainForm.colorLabel;
             }
         }
 
@@ -159,13 +159,13 @@ namespace personal_note
         {
             if (isNoteEmpty) rtbNote.Text = "";
             isNoteEmpty = false;
-            rtbNote.ForeColor = Color.White;
+            rtbNote.ForeColor = Form1.mainForm.colorText;
             if (e.KeyCode == Keys.Back && rtbNote.Text.Length <= 1)
             {
                 Random random = new Random();
                 isNoteEmpty = true;
                 rtbNote.Text = quesion[random.Next(0, quesion.Count)];
-                rtbNote.ForeColor = Color.Gray;
+                rtbNote.ForeColor = Form1.mainForm.colorLabel;
             }
         }
 
@@ -209,7 +209,7 @@ namespace personal_note
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            // 判斷是否按下 Ctrl + S
+            //判斷是否按下 Ctrl +S
             if (keyData == (Keys.Control | Keys.S))
             {
                 isStore = true;
