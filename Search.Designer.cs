@@ -131,6 +131,7 @@
             this.rtbDay.Size = new System.Drawing.Size(126, 40);
             this.rtbDay.TabIndex = 3;
             this.rtbDay.Text = "";
+            this.rtbDay.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtbYear_KeyDown);
             // 
             // rtbMonth
             // 
@@ -140,6 +141,7 @@
             this.rtbMonth.Size = new System.Drawing.Size(126, 40);
             this.rtbMonth.TabIndex = 2;
             this.rtbMonth.Text = "";
+            this.rtbMonth.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtbYear_KeyDown);
             // 
             // lblYear
             // 
@@ -159,6 +161,7 @@
             this.rtbYear.Size = new System.Drawing.Size(126, 40);
             this.rtbYear.TabIndex = 0;
             this.rtbYear.Text = "";
+            this.rtbYear.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtbYear_KeyDown);
             // 
             // tpStar
             // 
@@ -212,6 +215,7 @@
             this.rtbStar.Size = new System.Drawing.Size(126, 40);
             this.rtbStar.TabIndex = 2;
             this.rtbStar.Text = "";
+            this.rtbStar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtbYear_KeyDown);
             // 
             // tpTag
             // 
@@ -265,6 +269,7 @@
             this.rtbTag.Size = new System.Drawing.Size(126, 40);
             this.rtbTag.TabIndex = 8;
             this.rtbTag.Text = "";
+            this.rtbTag.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtbYear_KeyDown);
             // 
             // Search
             // 
