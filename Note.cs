@@ -27,6 +27,7 @@ namespace personal_note
             rtbDate.Text = $"{year}年 {month}月 {day}日";
             Random random = new Random();
             rtbNote.Text = quesion[random.Next(0, quesion.Count)];
+            InitialColor();
         }
 
         public Note(DiaryNode diaryNode)
@@ -45,8 +46,32 @@ namespace personal_note
                 lblTagText.Text += "#"+str + " ";
             }
             rtbDate.Text = $"{diaryNode.year}年 {diaryNode.month}月 {diaryNode.day}日";
+
+            InitialColor();
         }
 
+        private void InitialColor()
+        {
+            this.BackColor = Form1.mainForm.colorBackGround;
+            this.ForeColor = Form1.mainForm.colorText;
+            for(int i = 0;i < 5;i++)
+            {
+                pictureBoxes[i].BackColor = Form1.mainForm.colorBackGround;
+            }
+
+            rtbNote.BackColor = Form1.mainForm.colorBackGround;
+            rtbNote.ForeColor= Form1.mainForm.colorText;
+            rtbTitle.BackColor = Form1.mainForm.colorBackGround;
+            rtbTitle.ForeColor= Form1.mainForm.colorText;
+            lblTag.BackColor = Form1.mainForm.colorBackGround;
+            lblTag.ForeColor = Form1.mainForm.colorText;
+            lblDate.BackColor = Form1.mainForm.colorBackGround;
+            lblDate.ForeColor = Form1.mainForm.colorText;
+            rtbDate.BackColor = Form1.mainForm.colorBackGround;
+            rtbDate.ForeColor = Form1.mainForm.colorText;
+            rtbAdd.BackColor = Form1.mainForm.colorLabel;
+            rtbAdd.ForeColor = Form1.mainForm.colorText;
+        }
         private void InitialPBox()
         {
             pictureBoxes.Add(pBox1);
@@ -65,12 +90,12 @@ namespace personal_note
 
             if (isTitleEmpty) rtbTitle.Text = "";
             isTitleEmpty = false;
-            rtbTitle.ForeColor = Color.White;
+            rtbTitle.ForeColor = Form1.mainForm.colorText;
             if (e.KeyCode == Keys.Back && rtbTitle.Text.Length <= 1)
             {
                 isTitleEmpty = true;
                 rtbTitle.Text = "Title";
-                rtbTitle.ForeColor = Color.Gray;
+                rtbTitle.ForeColor = Form1.mainForm.colorLabel;
             }
         }
 
@@ -115,10 +140,13 @@ namespace personal_note
             }else if (btnAdd.Text.Equals("Ensure"))
             {
                 isStore = false;
-                lblTagText.Text += "#"+rtbAdd.Text + " ";
                 lblTagText.Visible = true;
                 rtbAdd.Visible = false;
-                list.Add(rtbAdd.Text);
+                if(rtbAdd.Text != "" && !diaryNode.tag.Contains(rtbAdd.Text) && !list.Contains(rtbAdd.Text))
+                {
+                    list.Add(rtbAdd.Text);
+                    lblTagText.Text += "#" + rtbAdd.Text + " ";
+                }
                 rtbAdd.Text = "";
                 btnAdd.Text = "Add";
             }
@@ -134,13 +162,13 @@ namespace personal_note
         {
             if (isNoteEmpty) rtbNote.Text = "";
             isNoteEmpty = false;
-            rtbNote.ForeColor = Color.White;
+            rtbNote.ForeColor = Form1.mainForm.colorText;
             if (e.KeyCode == Keys.Back && rtbNote.Text.Length <= 1)
             {
                 Random random = new Random();
                 isNoteEmpty = true;
                 rtbNote.Text = quesion[random.Next(0, quesion.Count)];
-                rtbNote.ForeColor = Color.Gray;
+                rtbNote.ForeColor = Form1.mainForm.colorLabel;
             }
         }
 
@@ -184,7 +212,7 @@ namespace personal_note
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            // 判斷是否按下 Ctrl + S
+            //判斷是否按下 Ctrl +S
             if (keyData == (Keys.Control | Keys.S))
             {
                 isStore = true;

@@ -73,5 +73,14 @@ namespace personal_note
 
             Form1.showSearchedDiary(list);
         }
+
+        private void rtbYear_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // 禁止 Enter 键的输入
+                e.Handled = true;          // 防止其他事件触发
+            }
+        }
     }
 }
