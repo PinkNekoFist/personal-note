@@ -235,7 +235,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.Location = new System.Drawing.Point(154, 14);
+            this.label2.Location = new System.Drawing.Point(153, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(217, 40);
             this.label2.TabIndex = 11;
@@ -243,7 +243,7 @@
             // 
             // btnTag
             // 
-            this.btnTag.Location = new System.Drawing.Point(196, 161);
+            this.btnTag.Location = new System.Drawing.Point(195, 157);
             this.btnTag.Name = "btnTag";
             this.btnTag.Size = new System.Drawing.Size(125, 46);
             this.btnTag.TabIndex = 10;
@@ -255,7 +255,7 @@
             // 
             this.lblTag.AutoSize = true;
             this.lblTag.Font = new System.Drawing.Font("新細明體", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblTag.Location = new System.Drawing.Point(293, 78);
+            this.lblTag.Location = new System.Drawing.Point(298, 81);
             this.lblTag.Name = "lblTag";
             this.lblTag.Size = new System.Drawing.Size(63, 40);
             this.lblTag.TabIndex = 9;
@@ -264,7 +264,7 @@
             // rtbTag
             // 
             this.rtbTag.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rtbTag.Location = new System.Drawing.Point(161, 78);
+            this.rtbTag.Location = new System.Drawing.Point(166, 81);
             this.rtbTag.Name = "rtbTag";
             this.rtbTag.Size = new System.Drawing.Size(126, 40);
             this.rtbTag.TabIndex = 8;

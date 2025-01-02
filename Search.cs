@@ -19,7 +19,11 @@ namespace personal_note
 
         private void btnDay_Click(object sender, EventArgs e)
         {
-            if (rtbDay.Text == "" || rtbYear.Text == "" || rtbMonth.Text == "") return;
+            if (rtbDay.Text == "" || rtbYear.Text == "" || rtbMonth.Text == "")
+            {
+                ErrorDay();
+                return;
+            }
             try
             {
                 List<DiaryNode> list = DiaryTree.SearchDiary(int.Parse(rtbYear.Text), int.Parse(rtbMonth.Text), int.Parse(rtbDay.Text));
@@ -36,13 +40,26 @@ namespace personal_note
             }
             catch (Exception ex)
             {
+                ErrorDay();
                 return;
             }
         }
 
+        private void ErrorDay()
+        {
+            lblAlarm.Text = "請輸入正確格式";
+            rtbYear.Text = "";
+            rtbMonth.Text = "";
+            rtbDay.Text = "";
+        }
+
         private void btnStar_Click(object sender, EventArgs e)
         {
-            if (rtbStar.Text == "") return;
+            if (rtbStar.Text == "")
+            {
+                ErrorStar();
+                return;
+            }
             try
             {
                 List<DiaryNode> list = DiaryTree.SearchMonthStar(int.Parse(rtbStar.Text),Form1.mainForm.GetYear(),Form1.mainForm.GetMonth());
@@ -56,13 +73,24 @@ namespace personal_note
             }
             catch (Exception ex)
             {
+                ErrorStar();
                 return;
             }
         }
 
+        private void ErrorStar()
+        {
+            lblStar.Text = "請輸入正確格式";
+            rtbStar.Text = "";
+        }
+
         private void btnTag_Click(object sender, EventArgs e)
         {
-            if (rtbTag.Text == "") return;
+            if (rtbTag.Text == "")
+            {
+                ErrorTag();
+                return;
+            }
 
             List<DiaryNode> list = DiaryTree.SearchDiaryTag(rtbTag.Text, Form1.mainForm.GetYear(), Form1.mainForm.GetMonth());
 
@@ -72,6 +100,12 @@ namespace personal_note
             }
 
             Form1.showSearchedDiary(list);
+        }
+
+        private void ErrorTag()
+        {
+            lblTag.Text = "請輸入正確格式";
+            rtbTag.Text = "";
         }
 
         private void rtbYear_KeyDown(object sender, KeyEventArgs e)
