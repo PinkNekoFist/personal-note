@@ -130,10 +130,6 @@ namespace personal_note
                 this.Controls.Add(tb);
             }
         }
-        private void Rtb_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
         private void InitializeMonth()
         {
@@ -182,13 +178,6 @@ namespace personal_note
         private void InitializeDiary()
         {
             DiaryTreeNode diaryTree = new DiaryTreeNode(2024, 12, 22);
-            //diaryTree.LoadDiary();
-            //for (int i = 0; i < 35; i++)
-            //{
-            //    string date = $"{year}/{month}/{i + 1}";
-            //    string content = diaryTree.SearchDiary(date);
-            //    dates[i].Text = content;
-            //}
         }
 
         private void InitializeTimer()
