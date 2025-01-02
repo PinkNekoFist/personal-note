@@ -66,7 +66,7 @@ namespace personal_note
             // Create a new Chart
             Chart pieChart = new Chart();
             pieChart.Size = new Size(600, 400);
-            pieChart.Location = new Point(700, 10);
+            pieChart.Location = new Point(700, 420);
 
             // Create a ChartArea
             ChartArea chartArea = new ChartArea();
@@ -93,6 +93,35 @@ namespace personal_note
             series.Points.Add(new DataPoint(0, count[3]) { LegendText = "three" });
             series.Points.Add(new DataPoint(0, count[4]) { LegendText = "four" });
             series.Points.Add(new DataPoint(0, count[5]) { LegendText = "five" });
+
+            // count average of stars
+            float sum = 0;
+            for (int i = 0; i < stars.Count; i++)
+            {
+                sum += stars[i];
+            }
+            float average = sum / intStars.Count;
+            if (average > 3) {
+                richTextBox1.Text = "本月你的心情指數平均值為" + average + "，心情不錯喔！";
+            }
+            else
+            {
+                richTextBox1.Text = "本月你的心情指數平均值為" + average + "，心情有點低落，要注意身心健康喔！";
+            }
+
+            // count number of each stars
+            richTextBox2.Text = "本月各星數出現次數：\n";
+            for (int i = 0; i < 6; i++)
+            {
+                if (i == 0)
+                {
+                    richTextBox2.Text += "未撰寫：" + count[i] + "次\n";
+                }
+                else
+                {
+                    richTextBox2.Text += i + "星：" + count[i] + "次\n";
+                }
+            }
 
             // add a color/lengend to each data point
             series.Points[0].Color = Color.Gray;
