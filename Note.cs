@@ -140,10 +140,13 @@ namespace personal_note
             }else if (btnAdd.Text.Equals("Ensure"))
             {
                 isStore = false;
-                lblTagText.Text += "#"+rtbAdd.Text + " ";
                 lblTagText.Visible = true;
                 rtbAdd.Visible = false;
-                list.Add(rtbAdd.Text);
+                if(rtbAdd.Text != "" && !diaryNode.tag.Contains(rtbAdd.Text) && !list.Contains(rtbAdd.Text))
+                {
+                    list.Add(rtbAdd.Text);
+                    lblTagText.Text += "#" + rtbAdd.Text + " ";
+                }
                 rtbAdd.Text = "";
                 btnAdd.Text = "Add";
             }
