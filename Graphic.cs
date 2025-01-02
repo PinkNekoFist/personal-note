@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -94,20 +90,6 @@ namespace personal_note
             series.Points.Add(new DataPoint(0, count[4]) { LegendText = "four" });
             series.Points.Add(new DataPoint(0, count[5]) { LegendText = "five" });
 
-            // count average of stars
-            float sum = 0;
-            for (int i = 0; i < stars.Count; i++)
-            {
-                sum += stars[i];
-            }
-            float average = sum / intStars.Count;
-            if (average > 3) {
-                richTextBox1.Text = "本月你的心情指數平均值為" + average + "，心情不錯喔！";
-            }
-            else
-            {
-                richTextBox1.Text = "本月你的心情指數平均值為" + average + "，心情有點低落，要注意身心健康喔！";
-            }
 
             // count number of each stars
             richTextBox2.Text = "本月各星數出現次數：\n";
@@ -121,6 +103,21 @@ namespace personal_note
                 {
                     richTextBox2.Text += i + "星：" + count[i] + "次\n";
                 }
+            }
+
+            // count average of stars
+            float sum = 0;
+            for (int i = 0; i < stars.Count; i++)
+            {
+                sum += stars[i];
+            }
+            float average = sum / (intStars.Count - count[0]);
+            if (average > 3) {
+                richTextBox1.Text = "本月你的心情指數平均值為" + average + "，心情不錯喔！";
+            }
+            else
+            {
+                richTextBox1.Text = "本月你的心情指數平均值為" + average + "，心情有點低落，要注意身心健康喔！";
             }
 
             // add a color/lengend to each data point
