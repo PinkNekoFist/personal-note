@@ -27,7 +27,7 @@ namespace personal_note
             rtbDate.Text = $"{year}年 {month}月 {day}日";
             Random random = new Random();
             rtbNote.Text = quesion[random.Next(0, quesion.Count)];
-            initialColor();
+            InitialColor();
         }
 
         public Note(DiaryNode diaryNode)
@@ -47,10 +47,10 @@ namespace personal_note
             }
             rtbDate.Text = $"{diaryNode.year}年 {diaryNode.month}月 {diaryNode.day}日";
 
-            initialColor();
+            InitialColor();
         }
 
-        private void initialColor()
+        private void InitialColor()
         {
             this.BackColor = Form1.mainForm.colorBackGround;
             this.ForeColor = Form1.mainForm.colorText;
