@@ -37,9 +37,9 @@ namespace personal_note
             this.diaryNode = diaryNode;
             showStar(diaryNode.star - 1);
             rtbTitle.Text = diaryNode.title;
-            rtbTitle.ForeColor = Color.White;
+            rtbTitle.ForeColor = Form1.mainForm.colorText;
             rtbNote.Text = diaryNode.content;
-            rtbNote.ForeColor = Color.White;
+            rtbNote.ForeColor = Form1.mainForm.colorText;
             isNoteEmpty = false;
             isTitleEmpty = false;
             foreach(string str in diaryNode.tag){
@@ -60,9 +60,7 @@ namespace personal_note
             }
 
             rtbNote.BackColor = Form1.mainForm.colorBackGround;
-            rtbNote.ForeColor= Form1.mainForm.colorText;
             rtbTitle.BackColor = Form1.mainForm.colorBackGround;
-            rtbTitle.ForeColor= Form1.mainForm.colorText;
             lblTag.BackColor = Form1.mainForm.colorBackGround;
             lblTag.ForeColor = Form1.mainForm.colorText;
             lblDate.BackColor = Form1.mainForm.colorBackGround;
@@ -95,7 +93,7 @@ namespace personal_note
             {
                 isTitleEmpty = true;
                 rtbTitle.Text = "Title";
-                rtbTitle.ForeColor = Form1.mainForm.colorLabel;
+                rtbTitle.ForeColor = Color.Gray;
             }
         }
 
@@ -168,7 +166,7 @@ namespace personal_note
                 Random random = new Random();
                 isNoteEmpty = true;
                 rtbNote.Text = quesion[random.Next(0, quesion.Count)];
-                rtbNote.ForeColor = Form1.mainForm.colorLabel;
+                rtbNote.ForeColor = Color.Gray;
             }
         }
 
