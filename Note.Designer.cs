@@ -168,6 +168,7 @@
             // 
             // pBox3
             // 
+            this.pBox3.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pBox3.ErrorImage")));
             this.pBox3.Image = ((System.Drawing.Image)(resources.GetObject("pBox3.Image")));
             this.pBox3.Location = new System.Drawing.Point(647, 6);
             this.pBox3.Name = "pBox3";
