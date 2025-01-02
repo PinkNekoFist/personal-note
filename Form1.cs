@@ -130,10 +130,6 @@ namespace personal_note
                 this.Controls.Add(tb);
             }
         }
-        private void Rtb_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
         private void InitializeMonth()
         {
@@ -182,13 +178,6 @@ namespace personal_note
         private void InitializeDiary()
         {
             DiaryTreeNode diaryTree = new DiaryTreeNode(2024, 12, 22);
-            //diaryTree.LoadDiary();
-            //for (int i = 0; i < 35; i++)
-            //{
-            //    string date = $"{year}/{month}/{i + 1}";
-            //    string content = diaryTree.SearchDiary(date);
-            //    dates[i].Text = content;
-            //}
         }
 
         private void InitializeTimer()
@@ -203,7 +192,9 @@ namespace personal_note
         { // rtb/tb BackColor, ForeColor, lbl BackColor, lbl SForeColor, lbl SBackColor
             colors.AddRange(new List<Color> { Color.Black, Color.White, Color.DimGray, Color.Black, Color.Chartreuse });
             colors.AddRange(new List<Color> { Color.White, Color.Black, Color.LightBlue, Color.Black, Color.LightGreen });
-            colors.AddRange(new List<Color> { ColorTranslator.FromHtml("#EE6352"), Color.Black, ColorTranslator.FromHtml("#02B2E3"), Color.Black, ColorTranslator.FromHtml("#57A773") });
+            colors.AddRange(new List<Color> { ColorTranslator.FromHtml("#FFEAD0"), Color.Black, ColorTranslator.FromHtml("#B3E5FC"), Color.Black, ColorTranslator.FromHtml("#A7D7C5") });
+            colors.AddRange(new List<Color> { ColorTranslator.FromHtml("#BDD5EA"), Color.Black, ColorTranslator.FromHtml("#5EDCFF"), Color.Black, ColorTranslator.FromHtml("#A5D0A8") });
+            colors.AddRange(new List<Color> { ColorTranslator.FromHtml("#B2FFF1"), Color.Black, ColorTranslator.FromHtml("#2EC0F9"), Color.Black, ColorTranslator.FromHtml("#57A773") });
         }
 
         private void richTextBox_Click(object sender, EventArgs e)
