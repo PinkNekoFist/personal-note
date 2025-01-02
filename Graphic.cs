@@ -36,7 +36,7 @@ namespace personal_note
             };
 
             // Add data points to the series
-            for (int i = 1; i < stars.Count; i++)
+            for (int i = 1; i < stars.Count - 1; i++)
             {
                 series.Points.Add(new DataPoint(i, stars[i]));
             }
@@ -77,7 +77,7 @@ namespace personal_note
             };
 
             int[] count = new int[6];
-            for (int i = 0; i < intStars.Count; i++)
+            for (int i = 1; i < intStars.Count - 1; i++)
             {
                 count[intStars[i]]++;
             }
@@ -107,11 +107,11 @@ namespace personal_note
 
             // count average of stars
             float sum = 0;
-            for (int i = 0; i < stars.Count; i++)
+            for (int i = 1; i < stars.Count - 1; i++)
             {
                 sum += stars[i];
             }
-            float average = sum / (intStars.Count - count[0]);
+            float average = sum / (intStars.Count - count[0] - 1);
             if (average > 3) {
                 richTextBox1.Text = "本月你的心情指數平均值為" + average + "，心情不錯喔！";
             }
