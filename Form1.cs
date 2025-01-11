@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
-using System.Windows.Forms.DataVisualization.Charting;
 
 namespace personal_note
 {
@@ -195,6 +193,9 @@ namespace personal_note
             colors.AddRange(new List<Color> { ColorTranslator.FromHtml("#FFEAD0"), Color.Black, ColorTranslator.FromHtml("#B3E5FC"), Color.Black, ColorTranslator.FromHtml("#A7D7C5") });
             colors.AddRange(new List<Color> { ColorTranslator.FromHtml("#BDD5EA"), Color.Black, ColorTranslator.FromHtml("#5EDCFF"), Color.Black, ColorTranslator.FromHtml("#A5D0A8") });
             colors.AddRange(new List<Color> { ColorTranslator.FromHtml("#B2FFF1"), Color.Black, ColorTranslator.FromHtml("#2EC0F9"), Color.Black, ColorTranslator.FromHtml("#57A773") });
+            colors.AddRange(new List<Color> { ColorTranslator.FromHtml("#415A77"), Color.Black, ColorTranslator.FromHtml("#E0E1DD"), Color.Black, ColorTranslator.FromHtml("#FF7043") });
+            colors.AddRange(new List<Color> { ColorTranslator.FromHtml("#FFC8DD"), Color.Black, ColorTranslator.FromHtml("#A2D2FF"), Color.Black, ColorTranslator.FromHtml("#FF7043") });
+            colors.AddRange(new List<Color> { ColorTranslator.FromHtml("#FEFAE0"), Color.Black, ColorTranslator.FromHtml("#606C38"), Color.Black, ColorTranslator.FromHtml("#FF7043") });
         }
 
         private void richTextBox_Click(object sender, EventArgs e)

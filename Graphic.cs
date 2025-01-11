@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -40,7 +36,7 @@ namespace personal_note
             };
 
             // Add data points to the series
-            for (int i = 1; i < stars.Count; i++)
+            for (int i = 1; i < stars.Count - 1; i++)
             {
                 series.Points.Add(new DataPoint(i, stars[i]));
             }
@@ -66,7 +62,7 @@ namespace personal_note
             // Create a new Chart
             Chart pieChart = new Chart();
             pieChart.Size = new Size(600, 400);
-            pieChart.Location = new Point(700, 10);
+            pieChart.Location = new Point(700, 420);
 
             // Create a ChartArea
             ChartArea chartArea = new ChartArea();
@@ -81,7 +77,7 @@ namespace personal_note
             };
 
             int[] count = new int[6];
-            for (int i = 0; i < intStars.Count; i++)
+            for (int i = 1; i < intStars.Count - 1; i++)
             {
                 count[intStars[i]]++;
             }
@@ -93,6 +89,36 @@ namespace personal_note
             series.Points.Add(new DataPoint(0, count[3]) { LegendText = "three" });
             series.Points.Add(new DataPoint(0, count[4]) { LegendText = "four" });
             series.Points.Add(new DataPoint(0, count[5]) { LegendText = "five" });
+
+
+            // count number of each stars
+            richTextBox2.Text = "本月各星數出現次數：\n";
+            for (int i = 0; i < 6; i++)
+            {
+                if (i == 0)
+                {
+                    richTextBox2.Text += "未撰寫：" + count[i] + "次\n";
+                }
+                else
+                {
+                    richTextBox2.Text += i + "星：" + count[i] + "次\n";
+                }
+            }
+
+            // count average of stars
+            float sum = 0;
+            for (int i = 1; i < stars.Count - 1; i++)
+            {
+                sum += stars[i];
+            }
+            float average = sum / (intStars.Count - count[0] - 1);
+            if (average > 3) {
+                richTextBox1.Text = "本月你的心情指數平均值為" + average + "，心情不錯喔！";
+            }
+            else
+            {
+                richTextBox1.Text = "本月你的心情指數平均值為" + average + "，心情有點低落，要注意身心健康喔！";
+            }
 
             // add a color/lengend to each data point
             series.Points[0].Color = Color.Gray;
